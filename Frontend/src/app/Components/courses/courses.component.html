@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+  <div class="container-fluid" id="grad">
+    <div class="container">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="grad3">
+        <div class="p-5 text-center bg-body-tertiary rounded-3" id="grad3">
+          <h1 class="text-body-emphasis">Explore the top Courses Offered by Medical and Technical Colleges That Match Your Interests</h1>
+          <p class="col-lg-8 mx-auto" id="fntsz">
+            Ready to explore how we can assist you on your educational journey? Discover our comprehensive range of services designed to support your goals and aspirations. Click below to learn more about how we can help you succeed.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="container">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="grad3">
+        <div class="p-5 text-center bg-body-tertiary rounded-3" id="grad3">
+          <div class="m-5 container">
+            <label class="form-label fw-bold fs-5 text-white align-items-center " for="ct_catid">Select Category Name : -</label>
+            <select aria-describedby="emailHelp" [(ngModel)]="catid" (change)="showValue()">
+              <option *ngFor="let a of catObj" [value]="a.catid">{{a.catnm}}</option>
+            </select>
+          </div>
+          <div class="container m-5">
+            <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+              <ng-container *ngFor="let a of courbycat">
+                <div fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                  <div class="card shadow-lg">
+                    <div class="card-header text-center text-warning">
+                      <strong class="fs-3" data-bs-toggle="modal" data-bs-target="#showdescrip"> {{a.crnm}} </strong>
+                    </div>
+                    <div class="card-body d-flex justify-content-center">
+                      <img src="data:image/*;base64,{{a.pic}}" height="250" width="250">
+                    </div>
+                    <div class="card-footer text-center">
+                      <div>{{a.descrip}}</div>
+                    </div>
+                    <div class="card-footer text-center">
+                      <div>{{a.seats}}</div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

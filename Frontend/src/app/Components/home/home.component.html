@@ -1,0 +1,600 @@
+<app-navbar></app-navbar>
+
+<!-- <div *ngIf="isSignedin">
+	<p>Welcome back, {{ signedinUser }}!</p>
+
+	<div *ngFor="let greet of greeting">
+		{{greet}}
+	</div>
+
+	<p><a type="button" class="btn btn-primary" style="text-decoration: underline; cursor: pointer;" (click)="doSignout()">Signout</a></p>
+</div> -->
+
+<main class="bg-dark-subtle1" id="grad">
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </symbol>
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check" viewBox="0 0 16 16">
+      <title>Check</title>
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <title>Bootstrap</title>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+    </symbol>
+    <symbol id="instagram" viewBox="0 0 16 16">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+    </symbol>
+    <symbol id="twitter" viewBox="0 0 16 16">
+      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+    </symbol>
+  </svg>
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+      <!-- <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button> -->
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <img src="../../assets/Images/Education1.jpg" class="bd-placeholder-img" alt="imageNotFound" width="100%" height="96%">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 class="txtclr1 txtsz">Welcome to MedTech Education Consultancy.</h1>
+            <p class="txtclr1 ptxtsz">Explore MedTech Education Consultancy to Know more about Medical and Technical Education System and how you can enroll in such courses</p>
+            <p><a class="btn btn-lg btn-primary" routerLink="/signup">Sign Up Today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <img src="../../assets/Images/MedEdu.jpg" class="bd-placeholder-img" alt="imageNotFound" width="100%" height="100%">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="txtclr1 txtsz">Medical Education.</h1>
+            <p class="txtclr1 ptxtsz">Medical education is education related to the practice of being a medical practitioner, including the initial training to become a physician (i.e., medical school and internship) and additional training thereafter (e.g., residency, fellowship, and continuing medical education).</p>
+            <p><a class="btn btn-lg btn-primary" routerLink="/courses">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <img src="../../assets/Images/TechEd.jpg" class="bd-placeholder-img" alt="imageNotFound" width="100%" height="100%">
+        <div class="container">
+          <div class="carousel-caption text-end text-light">
+            <h1 class="txtsz">Technical Education.</h1>
+            <p class="txtsz">Technical Education covers programmes in engineering, technology, management, architecture, town planning, pharmacy, applied arts & crafts, hotel management and catering technology.</p>
+            <p><a class="btn btn-lg btn-primary" routerLink="/courses">Know More</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="carousel-item"> -->
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+        <!-- <img src="../assets/Images/PetrolEng.jpg" class="bd-placeholder-img" alt="imageNotFound" width="100%" height="100%">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 class="txtclr">Petroleum Engineering.</h1>
+            <p class="txtclr">Petroleum Engineering, the branch of engineering that focuses on processes that allow the development and exploitation of crude oil and natural gas fields as well as the technical analysis, computer modeling, and forecasting of their future production performance.</p>
+            <p><a class="btn btn-lg btn-primary" href="./technicalcourses">Know More</a></p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <button class="carousel-control-prev btn btn-light" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next btn btn-light" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container col-xxl-12 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-12 col-sm-10 col-lg-6">
+        <img src="../../assets/Images/hero1.avif" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center">MedTech Education Consultant</h1>
+        <div>
+          <div class="bd-example-snippet bd-code-snippet">
+            <div class="bd-example m-0 border-0">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button fw-bold text-body-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="grad3">
+                      <h3>OUR VISION</h3>
+                    </button>
+                  </h4>
+                  <div id="collapseOne" class="accordion-collapse collapse show grad2" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p id="fntsz">Our vision is to empower and guide students towards realizing their full educational potential.</p>
+                      <p id="fntsz">We aspire to be the most trusted and sought-after education consultancy, known for our commitment to excellence, personalized guidance, and unwavering dedication to each student's success.</p>
+                      <p id="fntsz">We envision a world where every student's educational dreams are transformed into reality.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-body-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="grad3">
+                      <h3>OUR MISSION</h3>
+                    </button>
+                  </h4>
+                  <div id="collapseTwo" class="accordion-collapse collapse grad2" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p id="fntsz">Our mission is to provide expert guidance and support to students at every stage of their educational journey. We are dedicated to:</p>
+
+                        <p id="fntsz">Tailoring our services to each student's unique goals, strengths, and aspirations.</p>
+                        <p id="fntsz"><strong>Excellence: </strong>Delivering high-quality guidance that maximizes opportunities and minimizes stress.</p>
+                        <p id="fntsz"><strong>Ethical Practice: </strong>Conducting our consultancy with the utmost integrity, transparency, and honesty.</p>
+                        <p id="fntsz"><strong>Empowerment: </strong>Equipping students with the knowledge and skills they need to make informed decisions.</p>
+                        <p id="fntsz"><strong>Success: </strong>Ensuring our students' success and satisfaction are at the heart of everything we do.</p>
+                        <p id="fntsz">Through our unwavering commitment to these principles, we aim to assist students in unlocking their educational potential and achieving their dreams.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing grad2">
+
+    <!-- START THE FEATURETTES -->
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-bold">Featured Services Through MedTech Education Consultancy</h1>
+          <p class="lead" id="fntsz1">Here are some main services provided by MedTech Education Consultancy. For more information click the button below.</p>
+          <p>
+            <a routerLink="/services" class="btn btn-primary btn-lg my-2">Explore Our Services in details</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h1 class="featurette-heading fw-normal lh-1">Expert College Selection.</h1>
+        <h2><span class="text-body-secondary">Where Passion Meets the Perfect College</span></h2>
+        <p class="lead" id="fntsz">Personalized assistance in choosing the right college or university.</p>
+        <p class="lead" id="fntsz">In-depth research on institutions that match the student's goals and preferences.</p>
+        <p class="lead" id="fntsz">Guidance on factors like location, majors, rankings, and extracurricular opportunities</p>
+      </div>
+      <div class="col-md-5">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+        <img class="featurette-image img-fluid mx-auto" src="../../assets/Images/college1.avif" alt="Image Not Found" width="500" height="500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h1 class="featurette-heading fw-normal lh-1">Streamlined Admission Process.</h1>
+        <h2><span class="text-body-secondary">Your Admission Journey, Our Expertise.</span></h2>
+        <p class="lead" id="fntsz">Step-by-step guidance through the college admission process.</p>
+        <p class="lead" id="fntsz">Assistance with application documentation, essays, and interview preparation.</p>
+        <p class="lead" id="fntsz">Strategies to maximize admission chances, including test preparation.</p>
+      </div>
+      <div class="col-md-5 ">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+        <img class="featurette-image img-fluid mx-auto" src="../../assets/Images/addmission.jpg" alt="Image Not Found" width="500" height="500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette mb-lg-5">
+      <div class="col-md-7 ">
+        <h1 class="featurette-heading fw-normal lh-1">Career Counseling.</h1>
+        <h2><span class="text-body-secondary">Discovering Your Path to a Fulfilling Career.</span></h2>
+        <p class="lead" id="fntsz">Comprehensive career assessment and counseling services.</p>
+        <p class="lead" id="fntsz">Help students explore potential career paths based on their interests and strengths.</p>
+        <p class="lead" id="fntsz">Assistance in aligning educational choices with long-term career goals.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+        <img class="featurette-image img-fluid mx-auto" src="../../assets/Images/counseling.avif" alt="Image Not Found" width="500" height="500">
+      </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-bold">Featured Courses that you can chose from</h1>
+          <p class="lead" id="fntsz1">Here are some Medical and Technical Courses you can select. For more information click the button below.</p>
+          <p>
+            <a routerLink="/courses" class="btn btn-primary btn-lg my-2">Courses</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 mb-5 bg-body-tertiary" id="grad3">
+      <div class="container">
+        <h2 class="fw-bold text-center m-5">Medical Courses</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+              <img class="card-img-top" src="../../assets/Images/mbbs.jpeg" alt="Image Not Found" width="100%" height="225">
+              <div class="card-title text-center mt-3"><h3>Bachelor of Medicine and Bachelor of Surgery (MBBS)</h3></div>
+              <div class="card-body">
+                <p class="card-text ptxtsz4" >An MBBS course is an undergraduate medical degree awarded to students who have completed their training in the field of medicine and surgery. The MBBS degree is recognized in many countries as the standard qualification for medical doctors and physicians.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+              <img class="card-img-top" src="../../assets/Images/BDS.png" alt="Image Not Found" width="100%" height="225">
+              <div class="card-title text-center mt-3"><h3>Bachelor of Dental Surgery (BDS)</h3></div>
+              <div class="card-body">
+                <p class="card-text ptxtsz4">BDS (Bachelor of Dental Surgery) is a 5-years undergraduate program and the only approved professional dental course in India. Students become doctors after the BDS course. It is a compulsory course for students aspiring to work as dentists at government or private hospitals.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+              <img class="card-img-top" src="../../assets/Images/bpharmacy.jpg" alt="Image Not Found" width="100%" height="225">
+              <div class="card-title text-center mt-3"><h3>Bachelor of Pharmacy (B. Pharm)</h3></div>
+              <div class="card-body">
+                <p class="card-text ptxtsz4">Bachelor of Pharmacy or B.Pharma is a 4 years undergraduate degree that teaches students about drug synthesis, dosage formulation, analysing the chemical nature and preclinical testing of new drugs. Apart from the technical aspects of pharmacy and patenting of new drugs.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+              <img class="card-img-top" src="../../assets/Images/bams.jpg" alt="Image Not Found" width="100%" height="225">
+              <div class="card-title text-center mt-3"><h3>Bachelor of Ayurvedic Medicine and Surgery (BAMS)</h3></div>
+              <div class="card-body">
+                <p class="card-text ptxtsz4">Bachelor of Ayurveda Medicine and Surgery or BAMS is an undergraduate degree programme in Ayurveda and traditional healing and treatment process. BAMS degree provides complete knowledge about 'Ashtanga Ayurveda' along with scientific advances in modern medicine along with extensive practical training.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+              <img class="card-img-top" src="../../assets/Images/bhms.jpg" alt="Image Not Found" width="100%" height="225">
+              <div class="card-title text-center mt-3"><h3>Bachelor of Homeopathic Medicine and Surgery (BHMS)</h3></div>
+              <div class="card-body">
+                <p class="card-text ptxtsz4">BHMS full form is Bachelor in Homeopathic Medicine and Surgery. BHMS course covers the knowledge regarding homeopathic medical system, which involves the treatment of patients with the high dilutions of the homeopathic medicines mainly in liquid and tablet form to enhance body’s natural healing system.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+              <img class="card-img-top" src="../../assets/Images/bsc-nursing.jpg" alt="Image Not Found" width="100%" height="225">
+              <div class="card-title text-center mt-3"><h3>Bachelor of Science in Nursing (B.Sc Nursing)</h3></div>
+              <div class="card-body">
+                <p class="card-text ptxtsz4">BSc Nursing or Bachelor of Science in Nursing is a medical science course at the undergraduate degree level and the course duration is of four-year. Aspirants who have completed 10+2 in the Science stream with a major focus on Biology or have completed a diploma in Nursing are eligible for the BSc Nursing course.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2 class="m-5 p-5 fw-bold text-center">Technical Courses</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img class="card-img-top" src="../../assets/Images/btech.jpg" alt="Image Not Found" width="100%" height="225">
+            <div class="card-title text-center mt-3"><h3>Bachelor of Technology (B.Tech)</h3></div>
+            <div class="card-body">
+              <p class="card-text ptxtsz4">B.Tech Full Form is Bachelor of Technology. B.Tech is a 4 year professional engineering program. The course is usually divided into 8 semesters and during the first-year special emphasis is put on subjects like English, Mathematics, Physics, Computers, Data Processing. Students from the second year deal with the subjects that are more concerned with each specialization. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img class="card-img-top" src="../../assets/Images/bca.png" alt="Image Not Found" width="100%" height="225">
+            <div class="card-title text-center mt-3"><h3>Bachelor of Computer Applications (BCA)</h3></div>
+            <div class="card-body">
+              <p class="card-text ptxtsz4">BCA Full Form is Bachelor of Computer Applications. BCA is a 3 year UG course that trains students in Operating Systems, Java Programming, Computer Networks, Database Management Systems, Programming Languages etc. Students get job opportunities in the IT sector after completing the BCA course.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img class="card-img-top" src="../../assets/Images/barch.jpg" alt="Image Not Found" width="100%" height="225">
+            <div class="card-title text-center mt-3"><h3>Bachelor of Architecture (B.Arch)</h3><h3></h3></div>
+            <div class="card-body">
+              <p class="card-text ptxtsz4">BArch is an ug degree in the field of architecture. This five-year programme is a blend of theoretical and practical knowledge for students learning the art of planning, designing and constructing structures of various kinds. From ideating to mapping and overseeing the construction, an architect is involved at every stage of construction.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img class="card-img-top" src="../../assets/Images/bsccs.png" alt="Image Not Found" width="100%" height="225">
+            <div class="card-title text-center mt-3"><h3>Bachelor of Science (B.Sc) in Computer Science</h3></div>
+            <div class="card-body">
+              <p class="card-text ptxtsz4">The Department of Computer Science offers 3-year B.Sc. (Hons.) Computer Science programme through constituent colleges of the University of Delhi. With the new advancements in the field of computers and in a time when there is a boom in the IT industry, the University of Delhi has introduced B.Sc (Hons.)</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img class="card-img-top" src="../../assets/Images/bscit.png" alt="Image Not Found" width="100%" height="225">
+            <div class="card-title text-center mt-3"><h3>Bachelor of Science (B.Sc) in Information Technology</h3></div>
+            <div class="card-body">
+              <p class="card-text ptxtsz4">This degree is primarily focused on subjects such as software, databases, and networking. The BSc IT course is awarded for completing a programme of study in the field of software development, software testing, software engineering, web design, databases, programming, computer networking and computer systems.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img class="card-img-top" src="../../assets/Images/bscelectronics.jpg" alt="Image Not Found" width="100%" height="225">
+            <div class="card-title text-center mt-3"><h3>Bachelor of Science (B.Sc) in Electronics</h3></div>
+            <div class="card-body">
+              <p class="card-text ptxtsz4">BSc Electronics is a 3-year specialised course through which the students will be transformed into experts to work in various technical industries. The duration of the BSc Electronics course varies for students who decide to pursue it remotely, from a minimum of three years to a maximum of six years.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+  <div class="b-example-divider"></div>
+
+  <div class="container mt-5 mb-5 bg-info-subtle" id="grad4">
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-bold">You Can Contact Us Here</h1>
+          <p class="lead" id="fntsz1">Fill Up your details and our team will get back to you regarding your queries</p>
+        </div>
+      </div>
+    </section>
+    <app-contact-us></app-contact-us>
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <div class="container marketing bg-secondary-subtle" id="grad4">
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-bold">Subscribe Us For Getting a Free Consultancy or Become a Member</h1>
+          <p class="lead" id="fntsz1">Here you can Subscribe Us for availing our services and we will contact You.</p>
+        </div>
+      </div>
+    </section>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center m-5 p-5">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Free Consultancy</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">1 Month</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Free Counceling</li>
+            <li>College Details</li>
+            <li>Admission Details</li>
+            <li>Education Plans</li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-outline-primary" routerLink="/signup">Sign up for free</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Pro Membership</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">6 Months</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>College Selection Assistance</li>
+            <li>Admission Support</li>
+            <li>Career Counseling</li>
+            <li>Study Abroad Planning</li>
+            <li>Test Preparation Programs</li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-primary" (click)="ordernow()">Get started</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">Enterprise Subscription</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">1 Year</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>All Pro Membership Benifit</li>
+            <li>Scholarship and Financial Aid Guidance</li>
+            <li>Academic Workshops and Skill Development</li>
+            <li>Mock Interviews</li>
+            <li>Ongoing Support and Mentoring</li>
+
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-primary" (click)="ordernow()">Get Subscription</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="display-6 text-center mb-4 fw-bold">Compare plans</h2>
+
+  <div class="table-responsive m-5 p-5">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th style="width: 34%;"></th>
+          <th style="width: 22%;">Free</th>
+          <th style="width: 22%;">Pro</th>
+          <th style="width: 22%;">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="text-start">College Selection Assistance</th>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Admission Support</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th scope="row" class="text-start">Career Counseling</th>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Scholarship and Financial Aid Guidance</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Study Abroad Planning</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Test Preparation Programs
+          </th>
+          <td></td>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <div class="b-example-divider"></div>
+
+  <app-footer></app-footer>
+
+</main>

@@ -1,0 +1,165 @@
+
+<div class="container">
+
+  <!-- Menu  -->
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Contact Details</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addcontact" type="submit">Contact Us</button>
+      </div>
+    </div>
+  </nav>
+
+  <!--  Table Data -->
+
+
+  <form class="d-flex justify-content-end bg-light">
+    <input class="form-control me-2" type="search" name="src" [(ngModel)]="src"
+     placeholder="Search Contact Name" aria-label="Search">
+    <button type="button" class="btn btn-outline-primary" type="button" (click)="searchitem()">Search</button>
+  </form>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Select</th>
+        <th scope="col">Contact ID</th>
+        <th scope="col">Contact Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Services Required</th>
+        <th scope="col">Intrested Course Category</th>
+        <th scope="col">Message</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <ng-template [ngIf]="!src">
+        <tr *ngFor="let a of srcdata | paginate: { itemsPerPage: count, currentPage: p }">
+          <td>
+            <form>
+              <input type="checkbox" (change)="func(a)"/>
+            </form>
+          </td>
+          <td [ngStyle]="{'color':getcolor(a.contactid)}">
+            {{a.contactid}}
+          </td>
+          <td>{{a.contactname}}</td>
+          <td>{{a.email}}</td>
+          <td>{{a.phone}}</td>
+          <td>{{a.sr_serviceid}}</td>
+          <td>{{a.ct_catid}}</td>
+          <td>{{a.message}}</td>
+          <td> <button class="btn btn-sm btn-danger" > Delete </button> </td>
+        </tr>
+      </ng-template>
+
+      <ng-template [ngIf]="src">
+        <tr *ngFor="let a of srcdata | paginate: { itemsPerPage: count, currentPage: p }">
+          <td>
+            <form>
+              <input type="checkbox" (change)="func(a)"/>
+            </form>
+          </td>
+          <td [ngStyle]="{'color':getcolor(a.contactid)}">
+            {{a.contactid}}
+          </td>
+          <td>{{a.contactname}}</td>
+          <td>{{a.email}}</td>
+          <td>{{a.phone}}</td>
+          <td>{{a.sr_serviceid}}</td>
+          <td>{{a.ct_catid}}</td>
+          <td>{{a.message}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editcontact" >Edit</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-danger" (click)="deletecontact(a)"> Delete </button>
+          </td>
+        </tr>
+      </ng-template>
+
+    </tbody>
+  </table>
+
+
+
+  <!-- Pagination -->
+
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      (pageChange)="changePage($event)"></pagination-controls>
+  </div>
+
+
+
+  <!-- Add new contact modal -->
+
+
+  <div class="modal fade" id="addcontact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Contact</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form [formGroup] = "conObj">
+
+          <div class="mb-3">
+              <label class="form-label" for="contactname">Contact Name</label>
+              <input type="text" formControlName="contactname" id="contactname" aria-describedby="emailHelp">
+           </div>
+
+
+         <div class="mb-3">
+          <label class="form-label" for="email">Email</label>
+          <textarea row="5" col="20" formControlName="email" id="email" aria-describedby="emailHelp"></textarea>
+        </div>
+
+
+       <div class="mb-3">
+        <label class="form-label" for="phone">Phone</label>
+        <textarea row="5" col="20" formControlName="phone" id="phone" aria-describedby="emailHelp"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="sr_serviceid">Services Required</label>
+        <select formControlName="sr_serviceid" id="sr_serviceid" aria-describedby="emailHelp">
+              <option *ngFor="let a of allservice" [value]="a.serviceid">{{a.servicename}}</option>
+        </select>
+     </div>
+
+     <div class="mb-3">
+      <label class="form-label" for="ct_catid">Intrested Course</label>
+      <select formControlName="ct_catid" id="ct_catid" aria-describedby="emailHelp">
+            <option *ngFor="let a of allcategory" [value]="a.catid">{{a.catnm}}</option>
+      </select>
+   </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="message">Message</label>
+        <input type="text" formControlName="message" id="message" aria-describedby="emailHelp">
+     </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="uploadData()" >Send</button>
+              </div>
+
+        </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
