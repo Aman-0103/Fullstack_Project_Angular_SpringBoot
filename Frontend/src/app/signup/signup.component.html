@@ -41,11 +41,11 @@
       <div class="login100-pic js-tilt" data-tilt>
         <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png" alt="IMG">
       </div>
-      <div style="color : green" *ngIf='success'>{{success}}</div>
       <form class="login100-form validate-form" (submit)="doSignup()">
         <span class="login100-form-title">
           Create User
         </span>
+        <div style="color : green" *ngIf='success'>{{success}}</div>
         <div style="color : red" *ngIf='error'>{{error}}</div>
         <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
           <input class="input100" type="text" name="email" placeholder="User Name" [(ngModel)]="username">

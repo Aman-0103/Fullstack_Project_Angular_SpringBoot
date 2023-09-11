@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Request } from '../Request';
 import { catchError } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
 selector: 'app-signup',
@@ -10,7 +11,7 @@ styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
 
-	constructor(private authService: AuthService) { }
+	constructor(private authService: AuthService, private router: Router) { }
 
 	username: string = '';
 	password: string = '';
@@ -24,7 +25,7 @@ export class SignupComponent implements OnInit {
 	selectedRoles: string[] = [];
 
 	error: string = '';
-	success: string = '';
+	success: any = '';
 
 	ngOnInit(): void {
 	}
@@ -40,7 +41,8 @@ export class SignupComponent implements OnInit {
 			this.authService.signup(request).subscribe((result)=> {
 				//console.log(result);
 				//this.success = 'Signup successful';
-				this.success = result;
+        this.router.navigateByUrl('home');
+        this.success = alert(result);
 			}, (err) => {
 				//console.log(err);
 				this.error = 'Something went wrong during signup';

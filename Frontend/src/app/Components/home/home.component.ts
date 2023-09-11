@@ -101,6 +101,7 @@ export class HomeComponent {
   }
   processResponse(resp:any) {
     console.log(resp);
+    alert("You are a subscribed member of our concultancy");
   }
 
 }

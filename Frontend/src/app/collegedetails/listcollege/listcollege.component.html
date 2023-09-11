@@ -77,8 +77,12 @@
         <td>{{a.seats}}</td>
         <td>{{a.descrip}}</td>
         <td><img src="data:image/*;base64,{{a.pic}}" height="50" width="50"></td>
-        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editcollege" (click)="editCol(a)">Edit</button>
-        <button type="button" class="btn btn-outline-danger" (click)="deleteCol(a)">Delete</button>
+        <td>
+          <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editcollege" (click)="editCol(a)">Edit</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-danger" (click)="deleteCol(a)">Delete</button>
+        </td>
       </tr>
     </ng-template>
 
@@ -117,7 +121,7 @@
             <div class="mb-3">
               <label class="form-label" for="ct_catid">Category Name</label>
               <select formControlName="ct_catid" id="ct_catid" aria-describedby="emailHelp">
-                <option *ngFor="let a of allcategory" [value]="a.catid">{{a.catid}}</option>
+                <option *ngFor="let a of allcategory" [value]="a.catid">{{a.catnm}}</option>
               </select>
             </div>
 

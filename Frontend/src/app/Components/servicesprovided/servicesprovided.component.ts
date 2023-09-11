@@ -23,6 +23,7 @@ export class ServicesprovidedComponent {
       this.serv.createTransaction(this.tot).subscribe(
         res => { console.log(res);
         this.openTransactionModal(res);
+
         },
         err=>
         {
@@ -64,6 +65,7 @@ export class ServicesprovidedComponent {
   }
   processResponse(resp:any) {
     console.log(resp);
+    alert("You are a subscribed member of our concultancy");
   }
 
 

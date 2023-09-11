@@ -23,7 +23,7 @@ export class SigninComponent implements OnInit {
 		this.isSignedin = this.authService.isUserSignedin();
 
 		if(this.isSignedin) {
-			this.router.navigateByUrl('home');
+			this.router.navigateByUrl('admin');
 		}
 	}
 
@@ -32,7 +32,7 @@ export class SigninComponent implements OnInit {
 			const request: Request = { userName: this.username, userPwd: this.password};
 
 			this.authService.signin(request).subscribe((result)=> {
-				this.router.navigateByUrl('home');
+				this.router.navigateByUrl('admin');
 			}, () => {
 				this.error = 'Either invalid credentials or something went wrong';
 			});
