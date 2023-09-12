@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-@Service("catserv")
+@Service("catserv")         // used to denote a class that performs a specific service or function in a Spring Boot application
 public class categoryService 
 {
 	@Autowired

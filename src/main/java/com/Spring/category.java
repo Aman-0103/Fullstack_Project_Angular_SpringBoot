@@ -14,20 +14,20 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 
-@Entity
-@Table(name="category")
+@Entity             // specifies that the class is an entity and is mapped to a database table
+@Table(name="category")     // specifies the name of the database table to be used for mapping
 public class category
 {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO,generator="native")
-	@GenericGenerator(name = "native",strategy = "native")
+	@Id         // specifies the primary key of an entity
+	@GeneratedValue(strategy = GenerationType.AUTO,generator="native")        //  generate unique values for primary key columns within our database tables
+	@GenericGenerator(name = "native",strategy = "native")                    // a hibernate annotation used to denote a custom generator,
 	private int catid;
 	
 	@Column(name="catnm")
 	private String catnm;
 
 	
-	@OneToMany(mappedBy="ct",fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="ct",fetch = FetchType.LAZY)                // represents that a collection of objects are direct children of the current entity
 	private List<college> CL;
 
 

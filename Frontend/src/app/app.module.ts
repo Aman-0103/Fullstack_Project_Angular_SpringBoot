@@ -18,7 +18,6 @@ import { ListcollegeComponent } from './collegedetails/listcollege/listcollege.c
 import { ContactusComponent } from './contactdetails/contactus/contactus.component';
 import { ServicesComponent } from './servicedetails/services/services.component';
 import { ListcourseComponent } from './coursedetails/listcourse/listcourse.component';
-import { AdminnavComponent } from './admindashboard/adminnav/adminnav.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { AddmissionProcedureComponent } from './Components/addmission-procedure/addmission-procedure.component';
@@ -42,7 +41,6 @@ import { ServicesprovidedComponent } from './Components/servicesprovided/service
     ContactusComponent,
     ServicesComponent,
     ListcourseComponent,
-    AdminnavComponent,
     HomeComponent,
     AboutUsComponent,
     AddmissionProcedureComponent,
@@ -64,7 +62,6 @@ import { ServicesprovidedComponent } from './Components/servicesprovided/service
     FlexLayoutModule,
     RouterModule.forRoot([
         {path:"admin",component:AdminpanelComponent},
-        {path:"adminnav",component:AdminnavComponent},
         {path:'home', component: HomeComponent},
         {path:'about', component: AboutUsComponent},
         {path:'courses', component: CoursesComponent},

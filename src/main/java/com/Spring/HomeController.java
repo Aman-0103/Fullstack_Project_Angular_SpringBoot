@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 
-@RestController
-@RequestMapping("api")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RestController     // annotation for creating Restful controllers
+@RequestMapping("api")       // used to map HTTP requests to handler methods of MVC and REST controllers
+@CrossOrigin(origins = "*", allowedHeaders = "*")       // enables cross-origin resource sharing only for this specific method
 public class HomeController 
 {
-	@Autowired
+	@Autowired                   // used for automatic dependency injection
 	categoryService catserv;
 
 	@Autowired
@@ -61,7 +61,7 @@ public class HomeController
 	/*****************************  Category Details *********************************/
 	
 	
-	@GetMapping("allcat")
+	@GetMapping("allcat")                       // used for mapping HTTP GET requests onto specific handler methods
 	@CrossOrigin(origins = "http://localhost:4200/")
 	public List<category> getAllCat()
 	{
