@@ -18,7 +18,7 @@ For Front End -
 
 To run this project download this repository using ZIP file or clone this project in terminal using git clone followed by repository link.
 
-Then you can seperate the frontend file in a different folder and use the command ng install for downloading the node_module.
+Then you can separate the frontend file in a different folder and use the command ng install for downloading the node_module.
 
 Then run the command ng serve and it will be deployed at the localhost:4200 
 
